@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+        <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+        <title>demo</title>
+        <!-- 使用CDN的CSS文件 -->
+        <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.css) { %>
+        <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" />
+        <% } %>
+        <style>
+            html,
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            .loadding-box {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .lds-dual-ring {
+                display: flex;
+                color: #3377ff;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .lds-dual-ring::before {
+                content: ' ';
+                display: block;
+                width: 24px;
+                height: 24px;
+                margin: 8px;
+                border-radius: 50%;
+                border: 2px solid #3377ff;
+                border-color: #3377ff transparent #3377ff transparent;
+                animation: lds-dual-ring 1.2s linear infinite;
+            }
+            @keyframes lds-dual-ring {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <noscript>
+            <strong
+                >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript
+                enabled. Please enable it to continue.</strong
+            >
+        </noscript>
+        <div id="app">
+            <div class="loadding-box">
+                <div class="lds-dual-ring">加载中...</div>
+            </div>
+        </div>
+        <!-- built files will be auto injected -->
+        <!-- 使用CDN的JS文件 -->
+        <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
+        <script type="text/javascript" src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+        <% } %>
+    </body>
+</html>
