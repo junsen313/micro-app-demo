@@ -23,13 +23,13 @@ module.exports = {
     },
     chainWebpack: (config) => {
         const cdn = {
-            css: ['//unpkg.com/element-ui@2.15.5/lib/theme-chalk/index.css'],
+            css: ['//cdn.jsdelivr.net/npm/element-ui@2.15.5/lib/theme-chalk/index.css'],
             js: [
-                '//unpkg.com/vue@2.6.14/dist/vue.js',
-                '//unpkg.com/vue-router@3.5.2/dist/vue-router.min.js',
-                '//unpkg.com/vuex@3.6.2/dist/vuex.min.js',
-                '//unpkg.com/axios@0.21.1/dist/axios.min.js',
-                '//unpkg.com/element-ui@2.15.5/lib/index.js',
+                '//cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js',
+                '//cdn.jsdelivr.net/npm/vue-router@3.5.2/dist/vue-router.js',
+                '//cdn.jsdelivr.net/npm/vuex@3.6.2/dist/vuex.js',
+                '//cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.js',
+                '//cdn.jsdelivr.net/npm/element-ui@2.15.5/lib/index.js',
             ],
         };
 

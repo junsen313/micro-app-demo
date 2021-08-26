@@ -6,7 +6,7 @@
 <script>
 export default {
     destroyed() {
-        console.log('login destroyed');
+        console.log(`----------------- login vue destroyed -----------------`);
     },
 };
 </script>

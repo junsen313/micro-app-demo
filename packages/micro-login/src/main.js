@@ -5,8 +5,14 @@ import store from './store';
 
 Vue.config.productionTip = false;
 
-new Vue({
+var subApp = new Vue({
     router,
     store,
     render: (h) => h(App),
 }).$mount('#app');
+
+// 子应用中监听卸载事件
+window.addEventListener('unmount', function () {
+    console.log('[login] 我被卸载了');
+    subApp.$destroy();
+});

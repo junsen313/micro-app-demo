@@ -33,9 +33,7 @@ export default {
         },
         routerPush(path) {
             window?.history?.pushState(null, null, path);
-            setTimeout(() => {
-                window?.dispatchEvent(new PopStateEvent('popstate', { state: null }));
-            }, 10);
+            window?.dispatchEvent(new PopStateEvent('popstate', { state: null }));
         },
     },
 };
