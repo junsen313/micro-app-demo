@@ -13,11 +13,13 @@
             @mounted="mounted"
             @unmount="unmount"
             @error="error"
+            @datachange="dataAdpter"
         ></micro-app>
     </div>
 </template>
 
 <script>
+import { dataAdpter } from '@/core/eventCenter';
 export default {
     props: {
         name: String,
@@ -40,7 +42,9 @@ export default {
         console.log(`----------------- main vue created [${this.name}] -----------------`);
     },
     methods: {
+        dataAdpter,
         created() {
+            this.loading = true;
             console.log(`[${this.name}] created`);
         },
         beforemount() {
@@ -48,11 +52,9 @@ export default {
         },
         mounted() {
             this.loading = false;
-            console.timeEnd('total');
             console.log(`[${this.name}] mounted`);
         },
         unmount() {
-            console.time('total');
             this.loading = true;
             console.log(`[${this.name}] unmount`);
         },

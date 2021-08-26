@@ -6,6 +6,7 @@
                     >接口返回跳转</el-button
                 >
                 <el-button type="primary" size="default" @click="handleLogin2">直接跳转</el-button>
+                <el-button type="primary" size="default" @click="routerPush('/goods/404/')">goods/404</el-button>
             </div>
         </div>
     </div>

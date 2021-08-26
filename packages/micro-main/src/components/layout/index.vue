@@ -9,6 +9,7 @@
                 <div class="item" @click="goView('/goods/')">goods/</div>
                 <div class="item" @click="goView('/goods/about')">goods/about</div>
                 <div class="item" @click="goView('/goods/404')">goods/404</div>
+                <div class="item" @click="goView('/343434')">main/404</div>
             </div>
             <div class="view-port">
                 <router-view />
